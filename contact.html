@@ -16,13 +16,71 @@
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
     </ul>
-    <!-- NO TOGGLE BUTTON here -->
+    <!-- Dark/Light Mode Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 </header>
 
 <main>
   <section id="contact-form">
-    <!-- ... your form ... -->
+    <h2>Contact Form</h2>
+    <form id="contactForm" action="https://httpbin.org/post" method="POST">
+      <fieldset id="contact-fieldset">
+        <legend>Send me a message</legend>
+
+        <!-- Hidden Bot Field -->
+        <input type="hidden" name="possible_bot" value="true">
+
+        <!-- Name Field -->
+        <label for="name">Name: <span class="required">*</span></label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          required 
+          minlength="2" 
+          maxlength="50"
+          pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$"
+          title="Only letters, spaces, apostrophes, and hyphens allowed."
+        >
+        <output id="name-error" class="error"></output>
+
+        <!-- Email Field -->
+        <label for="email">Email: <span class="required">*</span></label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          required
+          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          title="Enter a valid email address."
+        >
+        <output id="email-error" class="error"></output>
+
+        <!-- Message Field -->
+        <label for="message">Message: <span class="required">*</span></label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="4" 
+          required 
+          minlength="10" 
+          maxlength="500"
+        ></textarea>
+        <output id="message-error" class="error"></output>
+        <p id="char-counter">500 characters remaining</p>
+
+        <!-- Output Messages for Errors and Info -->
+        <output id="error-message" class="error" aria-live="polite"></output>
+        <output id="info-message" class="info" aria-live="polite"></output>
+
+        <!-- Hidden Error Log for Submission -->
+        <input type="hidden" id="form-errors" name="form-errors">
+
+        <!-- Submit Button -->
+        <button type="submit">Send</button>
+      </fieldset>
+    </form>
   </section>
 </main>
 
@@ -30,7 +88,7 @@
   <p>© 2025 David De Santiago | <a href="contact.html">Contact Me</a></p>
 </footer>
 
-<!-- Keep the theme-toggle script so the page loads the correct theme from localStorage -->
+<!-- JavaScript Files -->
 <script src="assets/js/form-validation.js"></script>
 <script src="assets/js/theme-toggle.js" defer></script>
 
