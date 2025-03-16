@@ -1,0 +1,15 @@
+Method: POST
+Request URL: https://httpbin.org/post
+
+Headers:
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 82
+Origin: http://127.0.0.1:5500
+Referer: http://127.0.0.1:5500/contact.html
+
+Payload (Form Data):
+name=David+De+Santiago
+email=DDESANTIAGO@UCSD.EDU
+message=This+is+a+test!
+possible_bot=true

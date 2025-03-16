@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Labs - David De Santiago</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Labs</h1>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Required HTML Elements</h2>
+
+    <article>
+      <h3>Text Formatting</h3>
+      <p>
+        <strong>Bold text</strong>, <em>Italic text</em>, <b>Styled bold</b>, <i>Styled italic</i>
+      </p>
+      <p>Code snippet: <code>console.log('Hello World');</code></p>
+      <pre>
+function greet() {
+    return "Hello!";
+}
+      </pre>
+    </article>
+
+    <article>
+      <h3>Lists</h3>
+      <ul>
+        <li>Unordered list item</li>
+        <li>Another item</li>
+      </ul>
+      <ol>
+        <li>Ordered list item</li>
+        <li>Another item</li>
+      </ol>
+    </article>
+
+    <article>
+      <h3>Media Elements</h3>
+      <figure>
+        <img src="assets/images/example.jpg" alt="Example Image" width="200">
+        <figcaption>Sample Image</figcaption>
+      </figure>
+      <audio controls>
+        <source src="assets/audio/sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <video width="320" height="240" controls>
+        <source src="assets/video/sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article>
+      <h3>Forms and Inputs</h3>
+      <form>
+        <fieldset>
+          <legend>Example Form</legend>
+
+          <label for="text">Text Input:</label>
+          <input type="text" id="text" name="text"><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"><br>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"><br>
+
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date"><br>
+
+          <label for="options">Select Option:</label>
+          <select id="options" name="options">
+            <option>Option 1</option>
+            <option>Option 2</option>
+          </select><br>
+
+          <label for="comments">Textarea:</label>
+          <textarea id="comments" name="comments"></textarea><br>
+
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </article>
+
+    <article>
+      <h3>Interactive Elements</h3>
+      <details>
+        <summary>Click to Expand</summary>
+        <p>More information here...</p>
+      </details>
+
+      <dialog open>
+        <p>This is a dialog box.</p>
+        <button onclick="this.parentElement.close()">Close</button>
+      </dialog>
+    </article>
+
+    <article>
+      <h3>Table Example</h3>
+      <table>
+        <caption>Sample Table</caption>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+      </table>
+    </article>
+
+    <article>
+      <h3>Custom Elements</h3>
+      <custom-section>This is a semantic custom element.</custom-section>
+    </article>
+  </section>
+
+  <script>
+    class HelloWorld extends HTMLElement {
+      connectedCallback() {
+        console.log("Hello World!");
+      }
+    }
+    customElements.define('hello-world', HelloWorld);
+  </script>
+
+  <hello-world></hello-world>
+</main>
+
+<footer>
+  <p>© 2025 David De Santiago</p>
+</footer>
+
+</body>
+</html>

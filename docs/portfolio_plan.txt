@@ -1,0 +1,5 @@
+This portfolio site will serve as a professional showcase for my backend development skills. 
+It will highlight my projects, technical experience, and achievements to help potential 
+employers and recruiters understand my expertise. The site will include sections such as 
+About Me, Projects, Resume, and Contact. The design will be minimal and focused on content, 
+ensuring a clean, professional user experience.
