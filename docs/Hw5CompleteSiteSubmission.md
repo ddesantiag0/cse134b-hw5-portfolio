@@ -15,7 +15,7 @@
   I implemented a custom `<project-card>` element using the CustomElements API. This element is styled using CSS variables and laid out using CSS grid on the Projects page.
 
 - **Deliverable A:**  
-  > **Note:** Due to a technical oversight, separate screenshots for Deliverable A were not captured. Please refer to the repository code and live deployment for visual confirmation.
+  > **Note:** Due to a technical oversight, I was not able to take separate screenshots for Deliverable A. Please refer to the repository code and live deployment for visual confirmation.
 
 - **Deliverable B:**  
   > **Note:** I was unable to capture a separate screenshot for Deliverable B; however, the source code in my repository fully demonstrates the custom element's implementation.
