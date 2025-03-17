@@ -1,132 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home - David De Santiago</title>
-  <meta name="description" content="Portfolio website of David De Santiago - Software Engineer with experience in backend development, computer systems, full-stack, and low-level programming.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta name="description" content="Portfolio website of David De Santiago - Software Engineer with experience in backend development, computer systems, full-stack, and low-level programming." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
+  <header>
+    <h1>David De Santiago</h1>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="crud.html">CRUD</a></li>
+      </ul>
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+    </nav>
+  </header>
 
-<header>
-  <h1>David De Santiago</h1>
-  <nav>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <main>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+      <h2>Building Scalable & Efficient Software</h2>
+      <p>
+        I am a software engineer with experience in backend development, computer systems, full-stack development, and low-level programming.
+        My focus is on designing efficient, scalable, and reliable systems that drive real-world impact.
+      </p>
+      <p>
+        Explore my <a href="projects.html">projects</a> or <a href="contact.html">get in touch</a> if you are interested in collaborating.
+      </p>
+    </section>
 
-    <!-- Dark/Light Mode Toggle (moved here from contact.html) -->
-    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
-  </nav>
-</header>
+    <!-- Profile Image Section -->
+    <section class="profile-section">
+      <figure>
+        <picture>
+          <img src="assets/images/headshot1.jpeg"
+               alt="David De Santiago in front of Geisel Library at UCSD, wearing a light grey polo"
+               width="150"
+               loading="lazy"
+               style="border-radius: 10px; object-fit: cover;" />
+        </picture>
+        <figcaption>David De Santiago - Software Engineer</figcaption>
+      </figure>
+    </section>
 
-<main>
-  <!-- Introduction Section -->
-  <section class="intro-section">
-    <h2>Building Scalable & Efficient Software</h2>
-    <p>
-      I am a software engineer with experience in backend development, computer systems, 
-      full-stack development, and low-level programming. My focus is on designing efficient, 
-      scalable, and reliable systems that drive real-world impact.
-    </p>
-    <p>
-      Explore my <a href="projects.html">projects</a> or <a href="contact.html">get in touch</a> 
-      if you are interested in collaborating.
-    </p>
-  </section>
+    <!-- Sign Up / Sign In Prompt as a Button -->
+    <section class="signup-prompt">
+      <h2>Interested in More?</h2>
+      <p>
+        Sign up or log in to gain access to deeper project insights, code reviews, and direct communication.
+      </p>
+      <p>
+        <a href="login.html" class="login-button">Sign Up / Sign In</a>
+      </p>
+    </section>    
 
-  <!-- Profile Image Section -->
-  <section class="profile-section">
-    <figure>
-      <picture>
-        <img 
-          src="assets/images/headshot1.jpeg"
-          alt="David De Santiago in front of Geisel Library at UCSD, wearing a light grey polo"
-          width="150"
-          loading="lazy"
-          style="border-radius: 10px; object-fit: cover;"
-        >
-      </picture>
-      <figcaption>David De Santiago - Software Engineer</figcaption>
-    </figure>        
-  </section>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top hidden">↑ Back to Top</button>
+  </main>
 
-  <!-- Why Login Section -->
-  <section class="login-info">
-    <h2>Why Create an Account?</h2>
-    <p>By logging in, you gain access to:</p>
-    <ul>
-      <li><b>Technical Deep Dives</b> – In-depth explanations of my projects, covering architecture, optimization, and scalability.</li>
-      <li><b>Code Reviews & Resume Insights</b> – A detailed look into my problem-solving approach and engineering decisions.</li>
-      <li><b>Direct Communication</b> – A streamlined way to discuss potential collaborations or professional opportunities.</li>
-    </ul>
-    <p>
-      Not ready to sign in? You can still explore my <a href="projects.html">projects</a> 
-      or <a href="contact.html">contact me</a> anytime.
-    </p>
-  </section>
-
-  <!-- Login & Signup Section -->
-  <section id="login-section">
-    <div class="form-container">
-      <!-- Sign In Form -->
-      <div id="login-form">
-        <h2>Sign In</h2>
-        <form action="#" method="post">
-          <label for="login-email">Email:</label>
-          <input type="email" id="login-email" name="email" required><br>
-
-          <label for="login-password">Password:</label>
-          <input type="password" id="login-password" name="password" required><br>
-
-          <button type="submit">Sign In</button>
-        </form>
-        <p>Don't have an account? <a href="#" id="show-signup">Create an Account</a></p>
-      </div>
-
-      <!-- Create Account Form -->
-      <div id="signup-form" class="hidden">
-        <h2>Create an Account</h2>
-        <form action="#" method="post">
-          <label for="first-name">First Name:</label>
-          <input type="text" id="first-name" name="first_name" required><br>
-
-          <label for="last-name">Last Name:</label>
-          <input type="text" id="last-name" name="last_name" required><br>
-
-          <label for="signup-email">Email:</label>
-          <input type="email" id="signup-email" name="email" required><br>
-
-          <label for="signup-password">Password:</label>
-          <input type="password" id="signup-password" name="password" required><br>
-
-          <label for="confirm-password">Confirm Password:</label>
-          <input type="password" id="confirm-password" name="confirm_password" required><br>
-
-          <label class="checkbox-label">
-            <input type="checkbox" id="subscribe" name="subscribe"> Subscribe to notifications
-          </label>
-
-          <button type="submit">Create Account</button>
-        </form>
-        <p>Already have an account? <a href="#" id="show-login">Sign In</a></p>
-      </div>
+  <footer>
+    <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+        <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+      </a>
+      <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+        <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
+      </a>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer>
-  <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
-</footer>
-
-<!-- JavaScript for Login/Signup Toggle -->
-<script src="assets/js/script.js"></script>
-
-<!-- Theme Toggle Script (reads/writes localStorage) -->
-<script src="assets/js/theme-toggle.js" defer></script>
-
+  <!-- Scripts -->
+  <script src="assets/js/theme-toggle.js" defer></script>
+  <script src="assets/js/enhancements.js"></script>
 </body>
 </html>

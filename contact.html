@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - JavaScript Enhanced</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
@@ -15,8 +15,10 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="crud.html">CRUD</a></li>
     </ul>
-    <!-- Dark/Light Mode Toggle -->
+    <!-- Theme Toggle Button -->
     <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 </header>
@@ -24,15 +26,18 @@
 <main>
   <section id="contact-form">
     <h2>Contact Form</h2>
-    <form id="contactForm" action="https://httpbin.org/post" method="POST">
+    <!-- Remove action and method for custom handling -->
+    <form id="contactForm">
       <fieldset id="contact-fieldset">
         <legend>Send me a message</legend>
+        <input type="hidden" name="possible_bot" value="true" />
 
-        <!-- Hidden Bot Field -->
-        <input type="hidden" name="possible_bot" value="true">
-
-        <!-- Name Field -->
-        <label for="name">Name: <span class="required">*</span></label>
+        <!-- NAME Field with Tooltip -->
+        <label for="name">
+          Name:
+          <span class="info-icon" data-tooltip="Name can only contain letters, spaces, apostrophes, and hyphens.">ℹ</span>
+          <span class="required">*</span>
+        </label>
         <input 
           type="text" 
           id="name" 
@@ -42,11 +47,15 @@
           maxlength="50"
           pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$"
           title="Only letters, spaces, apostrophes, and hyphens allowed."
-        >
+        />
         <output id="name-error" class="error"></output>
 
-        <!-- Email Field -->
-        <label for="email">Email: <span class="required">*</span></label>
+        <!-- EMAIL Field with Tooltip -->
+        <label for="email">
+          Email:
+          <span class="info-icon" data-tooltip="Must include '@' and end with .com, .net, .edu, .org, .gov, or .io.">ℹ</span>
+          <span class="required">*</span>
+        </label>
         <input 
           type="email" 
           id="email" 
@@ -54,11 +63,15 @@
           required
           pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           title="Enter a valid email address."
-        >
+        />
         <output id="email-error" class="error"></output>
 
-        <!-- Message Field -->
-        <label for="message">Message: <span class="required">*</span></label>
+        <!-- MESSAGE Field with Tooltip -->
+        <label for="message">
+          Message:
+          <span class="info-icon" data-tooltip="Must be at least 10 characters; max 500.">ℹ</span>
+          <span class="required">*</span>
+        </label>
         <textarea 
           id="message" 
           name="message" 
@@ -70,27 +83,41 @@
         <output id="message-error" class="error"></output>
         <p id="char-counter">500 characters remaining</p>
 
-        <!-- Output Messages for Errors and Info -->
+        <!-- JS-populated outputs for errors/info -->
         <output id="error-message" class="error" aria-live="polite"></output>
         <output id="info-message" class="info" aria-live="polite"></output>
-
-        <!-- Hidden Error Log for Submission -->
-        <input type="hidden" id="form-errors" name="form-errors">
+        <input type="hidden" id="form-errors" name="form-errors" />
 
         <!-- Submit Button -->
         <button type="submit">Send</button>
       </fieldset>
     </form>
   </section>
+
+  <!-- BACK LINK -->
+  <p>
+    <a href="javascript:history.back()" class="back-button">← Go Back</a>
+  </p>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top hidden">↑ Back to Top</button>
 </main>
 
 <footer>
-  <p>© 2025 David De Santiago | <a href="contact.html">Contact Me</a></p>
+  <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+      <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+    </a>
+    <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+      <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
+    </a>
+  </div>
 </footer>
 
-<!-- JavaScript Files -->
+<!-- Form Validation JS -->
 <script src="assets/js/form-validation.js"></script>
+<!-- Theme Toggle JS -->
 <script src="assets/js/theme-toggle.js" defer></script>
-
 </body>
 </html>

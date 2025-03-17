@@ -7,32 +7,57 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <header>
+    <h1>Projects</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="crud.html">CRUD</a></li>
 
-<header>
-  <h1>Projects</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+      </ul>
+      <!-- Same theme toggle -->
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+    </nav>
+  </header>
 
-<main>
-  <section>
-    <h2>My Projects</h2>
-    <h3><a href="project1.html">Project 1</a></h3>
-    <p>Description goes here.</p>
+  <main>
+    <!-- Empty container for dynamically loaded project cards -->
+    <section id="projects-list" class="projects-grid">
+      <!-- JavaScript will insert <project-card> elements here -->
+    </section>
 
-    <h3><a href="project2.html">Project 2</a></h3>
-    <p>Description goes here.</p>
-  </section>
-</main>
+    <!-- Two buttons to load data -->
+    <div class="data-buttons">
+      <button id="load-local">Load Local</button>
+      <button id="load-remote">Load Remote</button>
+    </div>
 
-<footer>
-  <p>© 2025 David De Santiago</p>
-</footer>
+    <!-- BACK LINK -->
+    <p>
+      <a href="javascript:history.back()" class="back-button">← Go Back</a>
+    </p>
+  </main>
 
+  <footer>
+    <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+        <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+      </a>
+      <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+        <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
+      </a>
+    </div>
+  </footer>
+
+  <!-- Custom element script -->
+  <script src="assets/js/project-card.js"></script>
+  <!-- Data loading script (new) -->
+  <script src="assets/js/load-projects.js"></script>
+  <!-- Theme toggle script -->
+  <script src="assets/js/theme-toggle.js" defer></script>
 </body>
 </html>

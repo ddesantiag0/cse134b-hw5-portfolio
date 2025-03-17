@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Actions - David De Santiago</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* Additional styles for the CRUD page */
+    .crud-container {
+      max-width: 800px;
+      margin: 140px auto 40px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    }
+    .crud-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+    .crud-form input,
+    .crud-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(0,0,0,0.2);
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .crud-form button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      background: var(--primary-color);
+      color: var(--background-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .crud-form button:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    .crud-list {
+      margin-top: 20px;
+    }
+    .crud-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .crud-item:last-child {
+      border-bottom: none;
+    }
+    .crud-item .crud-details {
+      flex: 1 1 60%;
+    }
+    .crud-item .crud-actions {
+      flex: 1 1 35%;
+      text-align: right;
+    }
+    .crud-item button {
+      padding: 5px 10px;
+      margin-left: 5px;
+      border: none;
+      border-radius: 4px;
+      background: var(--primary-color);
+      color: var(--background-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .crud-item button:hover {
+      background: var(--accent-color);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CRUD Actions</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="crud-container">
+      <h2>Manage Projects Data</h2>
+      <!-- CRUD Form -->
+      <form id="crudForm" class="crud-form">
+        <!-- Hidden field to store index when editing -->
+        <input type="hidden" id="item-id" value="">
+        <label for="crud-title">Title:</label>
+        <input type="text" id="crud-title" placeholder="Enter project title" required>
+        <label for="crud-description">Description:</label>
+        <textarea id="crud-description" placeholder="Enter project description" required></textarea>
+        <label for="crud-link">Link:</label>
+        <input type="url" id="crud-link" placeholder="Enter project URL" required>
+        <button type="submit" id="crud-submit">Add Project</button>
+      </form>
+      
+      <!-- List of CRUD Items -->
+      <div class="crud-list" id="crudList">
+        <!-- Items will be dynamically inserted here -->
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+        <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon">
+      </a>
+      <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+        <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon">
+      </a>
+    </div>
+  </footer>
+  
+  <!-- Scripts -->
+  <script src="assets/js/theme-toggle.js" defer></script>
+  <script>
+    // CRUD Actions Script
+    document.addEventListener("DOMContentLoaded", function() {
+      const crudForm = document.getElementById("crudForm");
+      const crudList = document.getElementById("crudList");
+      const itemIdInput = document.getElementById("item-id");
+      const titleInput = document.getElementById("crud-title");
+      const descriptionInput = document.getElementById("crud-description");
+      const linkInput = document.getElementById("crud-link");
+      const submitBtn = document.getElementById("crud-submit");
+
+      // Load items from localStorage
+      function loadItems() {
+        let items = JSON.parse(localStorage.getItem("crudItems")) || [];
+        crudList.innerHTML = "";
+        items.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = "crud-item";
+          div.innerHTML = `
+            <div class="crud-details">
+              <strong>${item.title}</strong> – ${item.description} <br>
+              <a href="${item.link}" target="_blank">Visit Project</a>
+            </div>
+            <div class="crud-actions">
+              <button onclick="editItem(${index})">Edit</button>
+              <button onclick="deleteItem(${index})">Delete</button>
+            </div>
+          `;
+          crudList.appendChild(div);
+        });
+      }
+
+      // Save items to localStorage
+      function saveItems(items) {
+        localStorage.setItem("crudItems", JSON.stringify(items));
+      }
+
+      // Handle form submit for create/update
+      crudForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        let items = JSON.parse(localStorage.getItem("crudItems")) || [];
+        const id = itemIdInput.value;
+        const newItem = {
+          title: titleInput.value.trim(),
+          description: descriptionInput.value.trim(),
+          link: linkInput.value.trim()
+        };
+        if (id === "") {
+          // Create new item
+          items.push(newItem);
+        } else {
+          // Update existing item
+          items[parseInt(id)] = newItem;
+          itemIdInput.value = "";
+          submitBtn.textContent = "Add Project";
+        }
+        saveItems(items);
+        loadItems();
+        crudForm.reset();
+      });
+
+      // Expose functions to global scope for buttons
+      window.editItem = function(index) {
+        let items = JSON.parse(localStorage.getItem("crudItems")) || [];
+        const item = items[index];
+        itemIdInput.value = index;
+        titleInput.value = item.title;
+        descriptionInput.value = item.description;
+        linkInput.value = item.link;
+        submitBtn.textContent = "Update Project";
+      };
+
+      window.deleteItem = function(index) {
+        let items = JSON.parse(localStorage.getItem("crudItems")) || [];
+        items.splice(index, 1);
+        saveItems(items);
+        loadItems();
+      };
+
+      loadItems();
+    });
+  </script>
+</body>
+</html>

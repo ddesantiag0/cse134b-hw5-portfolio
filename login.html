@@ -1,40 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - David De Santiago</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
 <header>
-  <h1>Login</h1>
+  <h1>Login / Create Account</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="crud.html">CRUD</a></li>
     </ul>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 </header>
 
 <main>
-  <form action="#" method="post">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br>
+  <!-- Why Create an Account Section -->
+  <section class="login-info">
+    <h2>Why Create an Account?</h2>
+    <p>By logging in, you gain access to:</p>
+    <ul>
+      <li><b>Technical Deep Dives</b> – In-depth explanations of my projects.</li>
+      <li><b>Code Reviews & Resume Insights</b> – A detailed look into my process.</li>
+      <li><b>Direct Communication</b> – A streamlined way to discuss potential collaborations.</li>
+    </ul>
+    <p>
+      Not ready to sign in? You can still explore my <a href="projects.html">projects</a> 
+      or <a href="contact.html">contact me</a>.
+    </p>
+  </section>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br>
+  <!-- Login & Signup Section -->
+  <section id="login-section">
+    <div class="form-container">
+      <!-- Sign In Form -->
+      <div id="login-form">
+        <h2>Sign In</h2>
+        <form action="#" method="post" id="loginForm">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required /><br />
 
-    <button type="submit">Login</button>
-  </form>
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" name="password" required /><br />
+
+          <button type="submit">Sign In</button>
+        </form>
+        <p>Don't have an account? <a href="#" id="show-signup">Create an Account</a></p>
+      </div>
+
+      <!-- Create Account Form -->
+      <div id="signup-form" class="hidden">
+        <h2>Create an Account</h2>
+        <form action="#" method="post" id="signupForm">
+          <!-- First Name -->
+          <label for="first-name">
+            First Name:
+            <span class="info-icon" 
+                  data-tooltip="Name can only contain letters, spaces, apostrophes, and hyphens.">
+              ℹ
+            </span>
+          </label>
+          <input type="text" id="first-name" name="first_name" required /><br />
+
+          <!-- Last Name -->
+          <label for="last-name">
+            Last Name:
+            <span class="info-icon"
+                  data-tooltip="Name can only contain letters, spaces, apostrophes, and hyphens.">
+              ℹ
+            </span>
+          </label>
+          <input type="text" id="last-name" name="last_name" required /><br />
+
+          <!-- Email -->
+          <label for="signup-email">
+            Email:
+            <span class="info-icon"
+                  data-tooltip="Must include '@' and end with .com, .net, .edu, .org, .gov, or .io.">
+              ℹ
+            </span>
+          </label>
+          <input type="email" id="signup-email" name="email" required /><br />
+
+          <!-- Password -->
+          <label for="signup-password">
+            Password:
+            <span class="info-icon"
+                  data-tooltip="Passwords must match. (No complexity check in this demo.)">
+              ℹ
+            </span>
+          </label>
+          <input type="password" id="signup-password" name="password" required /><br />
+
+          <!-- Confirm Password -->
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm_password" required /><br />
+
+          <!-- Show/Hide Password Toggle -->
+          <label class="checkbox-label">
+            <input type="checkbox" id="toggle-password" /> Show Password
+          </label>
+
+          <!-- Subscribe Checkbox -->
+          <label class="checkbox-label">
+            <input type="checkbox" id="subscribe" name="subscribe" /> Subscribe to notifications
+          </label>
+
+          <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="#" id="show-login">Sign In</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top hidden">↑ Back to Top</button>
 </main>
 
 <footer>
-  <p>© 2025 David De Santiago</p>
+  <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+      <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+    </a>
+    <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+      <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
+    </a>
+  </div>
 </footer>
 
+<!-- Scripts -->
+<script src="assets/js/script.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script src="assets/js/enhancements.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - David De Santiago</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
 
@@ -15,23 +15,32 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="crud.html">CRUD</a></li>
     </ul>
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
   </nav>
 </header>
 
 <main>
+  <!-- Background / Introduction Section -->
   <section class="about-section">
     <h2>Background</h2>
     <p>
-      I am a <b>software engineer</b> with a focus on <b>backend development</b> and <b>computer systems</b>. 
-      My experience spans across <b>full-stack development</b>, low-level programming, and <b>system optimization</b>.
+      I am a <b>software engineer</b> with a passion for creating efficient and scalable systems.
+      My experience spans backend development, computer systems, full-stack development, 
+      and low-level programming. I specialize in designing robust applications that can handle
+      large-scale data and complex algorithms.
     </p>
     <p>
-      I thrive in solving <b>complex engineering problems</b>, building scalable solutions, 
-      and collaborating on projects that push technical boundaries.
+      Over the years, I have honed my skills in solving challenging engineering problems and collaborating
+      with cross-functional teams to deliver high-quality software solutions. Whether working on system
+      optimization or developing cutting-edge applications, I continuously strive for excellence in every project.
     </p>
   </section>
 
+  <!-- Technical Skills Section -->
   <section class="skills-section">
     <h2>Technical Skills</h2>
     <ul>
@@ -44,6 +53,7 @@
     </ul>
   </section>
 
+  <!-- Education Section -->
   <section class="education-section">
     <h2>Education</h2>
     <table>
@@ -61,6 +71,7 @@
     </table>
   </section>
 
+  <!-- Work Environment Section -->
   <section class="work-env-section">
     <h2>Work Environment</h2>
     <figure>
@@ -69,28 +80,48 @@
           src="assets/images/computerengineeringworkspace_about.png"
           alt="A modern computer engineering workspace with dual monitors and coding setup"
           class="work-img"
-        >
+        />
       </picture>
       <figcaption>My ideal computer engineering workspace.</figcaption>
-    </figure>        
+    </figure>
   </section>
 
+  <!-- Fun Fact Section -->
   <section class="fun-fact-section">
     <h2>Fun Fact</h2>
     <p>
-      I recently got a <b>Doberman puppy</b>, and he's been my new training partner! We go on 
-      <b>hikes and runs on the beach</b>, making sure we both stay active.
+      I recently got a <b>Doberman puppy</b>, and he's been my new training partner!
     </p>
     <p>
-      Whether it's optimizing code or pushing endurance limits, I enjoy challenges both in 
+      Whether it's optimizing code or pushing endurance limits, I enjoy challenges in 
       <b>software engineering and fitness</b>.
     </p>
   </section>
+
+  <!-- Back Link -->
+  <p>
+    <a href="javascript:history.back()" class="back-button">← Go Back</a>
+  </p>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top hidden">↑ Back to Top</button>
 </main>
 
 <footer>
-  <p>© 2025 David De Santiago | <a href="contact.html">Contact Me</a></p>
+  <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
+      <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
+    </a>
+    <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
+      <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
+    </a>
+  </div>
 </footer>
 
+<!-- Theme Toggle JS -->
+<script src="assets/js/theme-toggle.js" defer></script>
+<!-- Enhancements (Back to Top, etc.) -->
+<script src="assets/js/enhancements.js"></script>
 </body>
 </html>
