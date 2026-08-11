@@ -84,28 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const formData = {
-      name: nameField.value.trim(),
-      email: emailField.value.trim(),
-      message: messageField.value.trim(),
-      possible_bot: "true"
-    };
-
-    fetch("https://httpbin.org/post", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(json => {
-      alert("Message sent! I'll get back to you soon.");
-      form.reset();
-      charCounter.textContent = "500 characters remaining";
-      charCounter.style.color = "";
-    })
-    .catch(err => {
-      console.error("Error sending message:", err);
-      alert("Oops, something went wrong. Please try again later.");
-    });
+    document.getElementById("info-message").textContent =
+      "Validation passed. This coursework demo does not send or store messages; please use LinkedIn or GitHub to contact me.";
   });
 });

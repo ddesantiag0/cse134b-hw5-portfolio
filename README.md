@@ -1,4 +1,22 @@
-# cse134b-hw5-portfolio
-# Enhancements and Improvements
+# CSE 134B Coursework Portfolio — Homework 5
 
-For this final project update, I refined my portfolio site by improving the overall design and functionality. In Part 1, I implemented custom `<project-card>` elements for a modern, dynamic project display. In Part 2, I replaced hard-coded project data with JavaScript that dynamically loads projects from both localStorage and a remote JSON endpoint, ensuring seamless content updates. In Part 3, I enhanced the visual styling across the site—refining the dark and light mode themes so that both use a consistent “card” look with clear shadows and borders—and added a persistent theme toggle across all pages. These changes improve both the aesthetics and usability of the site while streamlining the user experience across various devices and environments.
+The final iteration of a multi-assignment web portfolio created for UC San Diego's CSE 134B course. It demonstrates semantic HTML, responsive CSS, custom elements, client-side validation, local storage, remote JSON loading, and persistent themes.
+
+This is an archived coursework artifact, not my current professional portfolio. Earlier `hw1`–`hw4` repositories preserve prior assignment stages.
+
+## Highlights
+
+- Responsive multi-page site with light and dark themes
+- Shadow-DOM `<project-card>` custom element
+- Project loading from local storage and a course-era JSON endpoint
+- Browser-based CRUD and login demonstrations
+- Client-side contact-form validation
+
+## Limitations
+
+- Authentication and CRUD data are browser demonstrations, not production security boundaries.
+- The contact form validates input but does not transmit or store messages.
+- The external JSON exercise may become unavailable.
+- Content reflects the project's 2025 submission state.
+
+Serve the directory with a static server such as `npx serve .`. No build step is required.
