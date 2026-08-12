@@ -1,22 +1,38 @@
-# CSE 134B Coursework Portfolio — Homework 5
+# David De Santiago — Professional Portfolio
 
-The final iteration of a multi-assignment web portfolio created for UC San Diego's CSE 134B course. It demonstrates semantic HTML, responsive CSS, custom elements, client-side validation, local storage, remote JSON loading, and persistent themes.
+Employer-facing portfolio presenting selected software, infrastructure, web, and hardware-connected work with explicit evidence and honest project boundaries.
 
-This is an archived coursework artifact, not my current professional portfolio. Earlier `hw1`–`hw4` repositories preserve prior assignment stages.
+## Live site
 
-## Highlights
+The portfolio is designed for static hosting through GitHub Pages. The primary experience is the single-page [`index.html`](index.html); earlier CSE 134B exercise pages remain in the repository as coursework history but are not presented as production features.
 
-- Responsive multi-page site with light and dark themes
-- Shadow-DOM `<project-card>` custom element
-- Project loading from local storage and a course-era JSON endpoint
-- Browser-based CRUD and login demonstrations
-- Client-side contact-form validation
+## Portfolio priorities
 
-## Limitations
+- Recruiter-readable introduction and contact paths
+- Selected projects with verified outcomes rather than unsupported claims
+- Semantic HTML landmarks and heading structure
+- Keyboard-visible navigation and skip link
+- Responsive layouts from mobile through wide desktop
+- Dark and light themes respecting system preference
+- Reduced-motion support
+- No framework or build dependency
 
-- Authentication and CRUD data are browser demonstrations, not production security boundaries.
-- The contact form validates input but does not transmit or store messages.
-- The external JSON exercise may become unavailable.
-- Content reflects the project's 2025 submission state.
+## Run locally
 
-Serve the directory with a static server such as `npx serve .`. No build step is required.
+Serve the repository with any static server, then open the printed local URL:
+
+```powershell
+npx serve .
+```
+
+## Test
+
+```powershell
+npm test
+```
+
+The integrity checks verify local asset references, professional homepage landmarks, accessible images and controls, external-link safety, and safe custom-element rendering in the archived course exercises.
+
+## Accuracy note
+
+Project descriptions distinguish verified functionality from planned or unvalidated work. Authentication and CRUD pages retained from the original course submission are browser demonstrations, not production security boundaries.

@@ -19,3 +19,28 @@ test('project card assigns untrusted values as text', () => {
   assert.match(script, /textContent/);
   assert.doesNotMatch(script, /innerHTML/);
 });
+
+test('professional homepage contains accessible structure and direct contact', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.match(html, /<a class="skip-link" href="#main-content">/);
+  assert.match(html, /<main id="main-content">/);
+  assert.match(html, /<nav aria-label="Primary navigation">/);
+  assert.match(html, /mailto:ddesantiago@ucsd\.edu/);
+  assert.doesNotMatch(html, /href="(?:login|crud)\.html"/);
+});
+
+test('homepage images and buttons have accessible names', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  const images = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
+  for (const image of images) assert.match(image, /\balt="[^"]+"/, `Missing useful alt text: ${image}`);
+  const buttons = [...html.matchAll(/<button\b[^>]*>/g)].map((match) => match[0]);
+  for (const button of buttons) assert.match(button, /aria-label="[^"]+"/, `Missing accessible name: ${button}`);
+});
+
+test('homepage avoids unsafe or misleading interaction patterns', () => {
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.doesNotMatch(html, /javascript:/);
+  assert.doesNotMatch(html, /target="_blank"/);
+  assert.doesNotMatch(html, /<form\b/);
+  assert.doesNotMatch(html, /large-scale|Sign Up|Sign In/i);
+});
