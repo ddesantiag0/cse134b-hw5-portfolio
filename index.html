@@ -1,84 +1,155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - David De Santiago's Portfolio</title>
-  <meta name="description" content="Portfolio website of David De Santiago - Software Engineer with experience in backend development, computer systems, full-stack, and low-level programming." />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="David De Santiago is a UC San Diego computer engineering student building reliable software across web, APIs, infrastructure, and hardware-connected systems.">
+  <meta name="theme-color" content="#07111f">
+  <meta property="og:title" content="David De Santiago | Software & Computer Engineering">
+  <meta property="og:description" content="Selected software, infrastructure, and hardware-connected projects with clear technical evidence.">
+  <meta property="og:type" content="website">
+  <title>David De Santiago | Software & Computer Engineering</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/portfolio.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>David's Portfolio</h1>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="crud.html">CRUD</a></li>
-      </ul>
-      <!-- Theme Toggle Button -->
-      <button id="theme-toggle" aria-label="Toggle Light/Dark Mode">🌙</button>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="David De Santiago, home">
+      <span class="brand-mark" aria-hidden="true">DD</span>
+      <span>David De Santiago</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+      <span aria-hidden="true">◐</span><span class="theme-label">Theme</span>
+    </button>
   </header>
 
-  <main>
-    <!-- Introduction Section -->
-    <section class="intro-section">
-      <h2>Building Scalable & Efficient Software</h2>
-      <p>
-        I am a software engineer with experience in backend development, computer systems, full-stack development, and low-level programming.
-        My focus is on designing efficient, scalable, and reliable systems that drive real-world impact.
-      </p>
-      <p>
-        Explore my <a href="projects.html">projects</a> or <a href="contact.html">get in touch</a> if you are interested in collaborating.
-      </p>
-    </section>
-
-    <!-- Profile Image Section -->
-    <section class="profile-section">
-      <figure>
-        <picture>
-          <img src="assets/images/headshot1.jpeg"
-               alt="David De Santiago in front of Geisel Library at UCSD, wearing a light grey polo"
-               width="150"
-               loading="lazy"
-               style="border-radius: 10px; object-fit: cover;" />
-        </picture>
-        <figcaption>David De Santiago - Software Engineer</figcaption>
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open to software, infrastructure, QA/IT, and technical roles</p>
+        <h1 id="hero-title">I build dependable systems across <span>software, infrastructure, and hardware.</span></h1>
+        <p class="hero-summary">Computer engineering student at UC San Diego focused on turning practical problems into usable, tested, and documented systems—from secure APIs and web products to HPC support and embedded telemetry.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work</a>
+          <a class="button button-secondary" href="mailto:ddesantiago@ucsd.edu">Email me</a>
+        </div>
+        <ul class="proof-list" aria-label="Working principles">
+          <li>Build for real use</li>
+          <li>Test failure paths</li>
+          <li>Document what is true</li>
+        </ul>
+      </div>
+      <figure class="portrait-card">
+        <img src="assets/images/headshot1.jpeg" alt="David De Santiago standing outside Geisel Library at UC San Diego" width="600" height="750">
+        <figcaption>
+          <strong>David De Santiago</strong>
+          <span>Computer Engineering · UC San Diego</span>
+        </figcaption>
       </figure>
     </section>
 
-    <!-- Sign Up / Sign In Prompt as a Button -->
-    <section class="signup-prompt">
-      <h2>Interested in More?</h2>
-      <p>
-        Sign up or log in to gain access to deeper project insights, code reviews, and direct communication.
-      </p>
-      <p>
-        <a href="login.html" class="login-button">Sign Up / Sign In</a>
-      </p>
-    </section>    
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selected work</p><h2 id="work-title">Projects with evidence behind them.</h2></div>
+        <p>Each project highlights the problem, the engineering decisions, and what was actually verified.</p>
+      </div>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top hidden">↑ Back to Top</button>
+      <div class="project-grid">
+        <article class="project-card project-featured">
+          <div class="project-topline"><span class="project-number">01</span><span class="project-kind">Developer tooling</span></div>
+          <h3>Webline for VS Code</h3>
+          <p>An original comic-web-inspired editor suite with three coordinated themes, sixteen custom icon types, semantic highlighting, and one-click suit switching.</p>
+          <ul class="tag-list"><li>JavaScript</li><li>VS Code API</li><li>SVG</li><li>Accessibility</li></ul>
+          <p class="evidence"><strong>Verified:</strong> automated contrast and asset validation, GitHub Actions packaging, and a public installable VSIX release.</p>
+          <div class="card-links"><a href="https://github.com/ddesantiag0/webline-vscode">Repository <span aria-hidden="true">↗</span></a><a href="https://github.com/ddesantiag0/webline-vscode/releases/tag/v0.2.1">Download <span aria-hidden="true">↓</span></a></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span class="project-number">02</span><span class="project-kind">Full-stack safety</span></div>
+          <h3>Comunidad Segura</h3>
+          <p>A bilingual React and TypeScript safety-reporting prototype with map-based reports, authentication boundaries, notifications, and offline support.</p>
+          <ul class="tag-list"><li>React</li><li>TypeScript</li><li>Firebase</li><li>Leaflet</li></ul>
+          <p class="evidence"><strong>Verified:</strong> removed exposed messaging credentials, escaped map content, added code splitting, and passed seven tests, lint, build, and production audit.</p>
+          <div class="card-links"><a href="https://github.com/ddesantiag0/comunidad-segura">Repository <span aria-hidden="true">↗</span></a></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span class="project-number">03</span><span class="project-kind">Backend security</span></div>
+          <h3>Secure Job Board API</h3>
+          <p>An Express and MongoDB API with JWT authorization, password hashing, role-aware access, security headers, CORS, and request throttling.</p>
+          <ul class="tag-list"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li></ul>
+          <p class="evidence"><strong>Verified:</strong> blocked public administrator self-assignment, normalized authentication input, separated startup concerns, and passed six request-level tests.</p>
+          <div class="card-links"><a href="https://github.com/ddesantiag0/secure-job-board-api">Repository <span aria-hidden="true">↗</span></a></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span class="project-number">04</span><span class="project-kind">Embedded telemetry</span></div>
+          <h3>Wildfire Monitoring Drone</h3>
+          <p>An Arduino-to-Node telemetry pipeline with an ESP8266 interface, ground-station API, NDJSON logs, Leaflet dashboard, and hardware-free simulator.</p>
+          <ul class="tag-list"><li>Arduino</li><li>Node.js</li><li>REST</li><li>Telemetry</li></ul>
+          <p class="evidence"><strong>Verified:</strong> valid HTTP/JSON telemetry and passing ground-station tests. Physical flight and sensor validation remain documented future work.</p>
+          <div class="card-links"><a href="https://github.com/ddesantiag0/WildfireMonitoringDrone">Repository <span aria-hidden="true">↗</span></a></div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-topline"><span class="project-number">05</span><span class="project-kind">Small-business web</span></div>
+          <h3>Splash Auto Detail</h3>
+          <p>A responsive small-business site using semantic HTML, modern CSS, structured data, a sitemap, and local-search documentation.</p>
+          <ul class="tag-list"><li>HTML</li><li>CSS</li><li>SEO</li><li>Testing</li></ul>
+          <p class="evidence"><strong>Verified:</strong> removed broken assets and unsupported claims; added integrity tests for assets, links, URLs, and structured data.</p>
+          <div class="card-links"><a href="https://github.com/ddesantiag0/splash-auto-detail">Repository <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading"><div><p class="eyebrow">Field experience</p><h2 id="experience-title">Technical support where the work happens.</h2></div></div>
+      <article class="experience-card">
+        <div><p class="experience-org">San Diego Supercomputer Center</p><h3>Student Helper · Summer Institute</h3></div>
+        <p>Supported PhD researchers and technical professionals during hands-on high-performance computing sessions on the Expanse supercomputer. Assisted with Linux, SSH, SLURM, software environments, and real-time troubleshooting of computational workflows.</p>
+      </article>
+    </section>
+
+    <section class="section about-grid" id="about" aria-labelledby="about-title">
+      <div>
+        <p class="eyebrow">How I work</p>
+        <h2 id="about-title">Clear thinking, honest scope, useful results.</h2>
+        <p>I enjoy projects that cross boundaries: product and infrastructure, software and hardware, implementation and user support. I aim to understand the real problem, build the smallest useful system, test where it can fail, and document the limits clearly.</p>
+      </div>
+      <div class="skills-panel">
+        <h3>Technical toolkit</h3>
+        <dl>
+          <div><dt>Languages</dt><dd>Python, Java, JavaScript, TypeScript, C++, C, SQL</dd></div>
+          <div><dt>Web & APIs</dt><dd>React, Node.js, Express, Firebase, MongoDB, HTML, CSS</dd></div>
+          <div><dt>Systems</dt><dd>Linux, Git, REST APIs, Arduino, SystemVerilog, SLURM</dd></div>
+          <div><dt>Practice</dt><dd>Testing, debugging, documentation, security-minded review</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow">Let’s connect</p>
+      <h2 id="contact-title">Looking for someone who can build, troubleshoot, and communicate clearly?</h2>
+      <p>I’m interested in software engineering, infrastructure, QA/IT, support engineering, and other technical opportunities where reliability and user impact matter.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="mailto:ddesantiago@ucsd.edu">ddesantiago@ucsd.edu</a>
+        <a class="button button-secondary" href="https://www.linkedin.com/in/david-de-santiago-a485b4240/">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href="https://github.com/ddesantiag0">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 David De Santiago | <a href="contact.html">Contact</a></p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/david-de-santiago-a485b4240/" target="_blank" rel="noopener">
-        <img src="assets/images/linkedin-icon.png" alt="LinkedIn Icon" class="social-icon" />
-      </a>
-      <a href="https://github.com/ddesantiag0" target="_blank" rel="noopener">
-        <img src="assets/images/github-icon.png" alt="GitHub Icon" class="social-icon" />
-      </a>
-    </div>
+    <p>© <span id="current-year">2026</span> David De Santiago.</p>
+    <p>Built with semantic HTML, responsive CSS, and progressive enhancement.</p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/theme-toggle.js" defer></script>
-  <script src="assets/js/enhancements.js"></script>
 </body>
 </html>
