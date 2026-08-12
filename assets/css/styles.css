@@ -3,3 +3,4 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 .light-theme .project-featured{background:linear-gradient(120deg,#dff4f0,#fff 58%)}
 .light-theme .contact-section{background:linear-gradient(135deg,#dcecf7,#fff 68%)}
+.experience-list{display:grid;gap:1rem}.experience-date{color:var(--muted);font-size:.84rem;margin:.5rem 0 0}.education-note{display:flex;flex-direction:column;gap:.25rem;margin-top:2rem;padding:1rem 0 1rem 1rem;border-left:2px solid var(--accent)}.education-note span{color:var(--muted);font-size:.92rem}
