@@ -25,7 +25,9 @@ test('professional homepage contains accessible structure and direct contact', (
   assert.match(html, /<a class="skip-link" href="#main-content">/);
   assert.match(html, /<main id="main-content">/);
   assert.match(html, /<nav aria-label="Primary navigation">/);
-  assert.match(html, /mailto:ddesantiago@ucsd\.edu/);
+  assert.match(html, /mailto:ddesantiago26@gmail\.com/);
+  assert.match(html, /B\.S\. Mathematics–Computer Science/);
+  assert.match(html, /Director of Technology &amp; Systems/);
   assert.doesNotMatch(html, /href="(?:login|crud)\.html"/);
 });
 
